@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Parkinsons Diseas Detection</title>
+    <link rel="icon" type="image/png" sizes="96x96" href="neurons.jpg">
+
+    <link href="{{ url_for('static', filename='libraries/css/bootstrap.css') }}" rel="stylesheet" type="text/css" >
+    <link rel="stylesheet" href="../static/style_pred.css">
+
+</head>
+<body>
+    <div class="class">
+        <h1>You are {{predict_res}}</h1>
+
+    </div>
+    <div class="img1">
+        <img src="../static/33.jpg" alt="" height="200" width="350">
+    </div>
+    <div class="card1">
+
+        <h4>Drugs</h4>
+        <h6>
+             Levodopa is the most common drug, this drug<br> is the chemical precursor of dopamine.<br>This drug does not impact PD symptoms but <br>helps reduce side effects of levodopa,<br> particularly nausea, and aids in the absorption <br>of levodopa.
+        </h6>
+
+    </div>
+    <div class="img2">
+        <img src="../static/33.jpg" alt="" height="200" width="360">
+    </div>
+    <div class="card2">
+        <h4>Exercise</h4>
+        <h6>
+            PD almost always includes a gradual increase in <br>difficulty with balance, and drugs do not help<br> with this. So it is also important to include <br>activities to work on balance in your program.<br> Yoga and dancing are good options.
+        </h6>
+
+    </div>
+    <div class="img3">
+        <img src="../static/33.jpg" alt="" height="200" width="350">
+    </div>
+    <div class="card3">
+        <h4>Attitude</h4>
+        <h6>
+             important to maintain a positive attitude. Maintaining an active social life, meditation,<br> and seeing a counselor/therapist have all been helpful for you
+        </h6>
+
+    </div>
+</body>
+</html>

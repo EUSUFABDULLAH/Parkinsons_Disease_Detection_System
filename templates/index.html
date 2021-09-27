@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <title>Parkinsons Diseas Detection</title>
+        <link rel="icon" type="image/png" sizes="96x96" href="neurons.jpg">
+
+        <link href="{{ url_for('static', filename='libraries/css/bootstrap.css') }}" rel="stylesheet" type="text/css" >
+
+        <link rel="stylesheet" href="../static/style.css">
+    </head>
+    <body>
+        <div class="title">
+            <h1>Parkinsons Diseas Detection</h1>
+        </div>
+        <br><br>
+        <div class="container">
+                <form action="{{ url_for('prediction')}}" method ="POST" >
+                    <div class="row">
+
+                            <div class="form-group">
+                                <label><h4>Average vocal fundamental frequency(Hz)</h4></label>
+                                <input type="text" class="form-control"  name="MDVP:Fo(Hz)" placeholder="Enter MDVP:Fo(Hz)">
+                            </div>
+                            <div class="form-group">
+                                <label><h4>Maximum vocal fundamental frequency(Hz)</h4></label>
+                                <input type="text" class="form-control"  name="MDVP:Fhi(Hz)" placeholder="Enter MDVP:Fhi(Hz)">
+                            </div>
+                            <div class="form-group">
+                                <label><h4>Minimum vocal fundamental frequency(Hz)</h4></label>
+                                <input type="text" class="form-control"  name="MDVP:Flo(Hz)" placeholder="Enter MDVP:Flo(Hz)">
+                            </div>
+                            <div class="form-group">
+                                <label><h4>Jitter in Multidimensional Voice Program in percentage</h4></label>
+                                <input type="text" class="form-control"  name="MDVP:Jitter(%)" placeholder="Enter MDVP:Jitter(%)">
+                            </div>
+                            <div class="form-group">
+                                <label><h4>Absolute Jitter in Multidimensional Voice Program in milisecond</h4></label>
+                                <input type="text" class="form-control"  name="MDVP:Jitter(Abs)" placeholder="Enter MDVP:Jitter(Abs)">
+                            </div>
+
+                            <div class="form-group">
+                                <label><h4>Multidimensional Voice Program Relative Amplitude Perturbation</h4></label>
+                                <input type="text" class="form-control"  name="MDVP:RAP" placeholder="Enter MDVP:RAP">
+                            </div>
+                            <div class="form-group">
+                                <label><h4>Multidimensional Voice Program Five-point Period Perturbation Quotient</h4></label>
+                                <input type="text" class="form-control"  name="MDVP:PPQ" placeholder="Enter MDVP:PPQ">
+                            </div>
+                            <div class="form-group">
+                                <label><h4>Average Absolute Difference of Differences Between Jitter Cycles</h4></label>
+                                <input type="text" class="form-control"  name="Jitter:DDP" placeholder="Enter Jitter:DDP">
+                            </div>
+                            <div class="form-group">
+                                <label><h4>Multidimensional Voice Program Local Shimmer</h4></label>
+                                <input type="text" class="form-control"  name="MDVP:Shimmer" placeholder="Enter MDVP:Shimmer">
+                            </div>
+                            <div class="form-group">
+                                <label ><h4>Multidimensional Voice Program Local Shimmer in dB</h4></label>
+                                <input type="text" class="form-control"  name="MDVP:Shimmer(dB)" placeholder="Enter MDVP:Shimmer(dB)">
+                            </div>
+
+                            <div class="form-group">
+                                <label><h4>Three-point Amplitude Perturbation Quotient</h4></label>
+                                <input type="text" class="form-control"  name="Shimmer:APQ3" placeholder="Enter Shimmer:APQ3">
+                            </div>
+                            <div class="form-group">
+                                <label ><h4>Five-point Amplitude Perturbation Quotient</h4></label>
+                                <input type="text" class="form-control"  name="Shimmer:APQ5" placeholder="Enter Shimmer:APQ5">
+                            </div>
+                            <div class="form-group">
+                                <label ><h4>Multidimensional Voice Program 11-point Amplitude Perturbation Quotient</h4></label>
+                                <input type="text" class="form-control"  name="MDVP:APQ" placeholder="Enter MDVP:APQ">
+                            </div>
+                            <div class="form-group">
+                                <label ><h4>Average Absolute Differences Between the Amplitudes of Consecutive Periods</h4></label>
+                                <input type="text" class="form-control"  name="Shimmer:DDA" placeholder="Enter Shimmer:DDA">
+                            </div>
+                            <div class="form-group">
+                                <label ><h4>Noise-to-Harmonics Ratio</h4></label>
+                                <input type="text" class="form-control"  name="NHR" placeholder="Enter NHR">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label ><h4>Harmonics-to-Noise Ratio</h4></label>
+                                <input type="text" class="form-control"  name="HNR" placeholder="Enter HNR">
+                            </div>
+                            <div class="form-group">
+                                <label ><h4>Recurrence Period Density Entropy Measure</h4></label>
+                                <input type="text" class="form-control"  name="RPDE" placeholder="Enter RPDE">
+                            </div>
+                            <div class="form-group">
+                                <label ><h4>Signal Fractal Scaling Exponent of Detrended Fluctuation Analysis</h4></label>
+                                <input type="text" class="form-control"  name="DFA" placeholder="Enter DFA">
+                            </div>
+                            <div class="form-group">
+                                <label ><h4>Two Nonlinear Measures of Fundamental</h4></label>
+                                <input type="text" class="form-control"  name="spread1" placeholder="Enter spread1">
+                            </div>
+                            <div class="form-group">
+                                <label ><h4>Frequency Variation</h4></label>
+                                <input type="text" class="form-control"  name="spread2" placeholder="Enter spread2">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label ><h4>Correlation Dimension</h4></label>
+                                <input type="text" class="form-control"  name="D2" placeholder="Enter D2">
+                            </div>
+                            <div class="form-group">
+                                <label ><h4>Pitch Period Entropy</h4></label>
+                                <input type="text" class="form-control"  name="PPE" placeholder="Enter PPE">
+                            </div>
+                            <div class="form-group">
+                                <label ><h4>Choose a Algorithm</h4></label>
+                                <select name="algo"  class="form-control">
+                                   <option value="1">XGBClassifier [Accuracy score 91.8%]</option>
+                                   <option value="2">Random Forest Classifier [Accuracy score 89.7%]</option>
+                                   <option value="3">Logistic Regression [Accuracy score 83.6%]</option>
+                                   <option value="4">KNClassifier [Accuracy score 83.6%]</option>
+                                   <option value="5">SV Classifier [Accuracy score 83.6%]</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn">Submit</button>
+
+                    </div>
+                </form>
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      </div>
+    <br><br>
+    </body>
+</html>
